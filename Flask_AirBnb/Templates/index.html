@@ -1,0 +1,65 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)),url(../static/a6.jpg);
+    height:100vh;
+    background-position:center;
+    overflow:hidden;
+    background-size: cover;
+}
+.title{
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+}
+.title h1{
+    color:#fff;
+    font-size:50px;
+}
+.line{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+}
+.line p{
+    color:#fff;
+    font-size:40px;
+    font-family: fangsong;
+}
+.button{
+    position: absolute;
+    top: 62%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    background-color:lavenderblush;
+}
+.btn{
+    border:1px solid #fff;
+    padding: 10px 30px;
+    color:#fff;
+    text-decoration: none;
+    transition:0.6s ease;
+}
+.btn:hover{
+    background-color:lightseagreen;
+    color:#000; 
+}
+</style>
+</head>
+<body>
+<div class="title">
+            <h1>AVALANCHE FORECASTING</h1>
+        </div>
+ <div class="line">
+ <p><em>The Avalanche Prediction to Save Lives</em><p>
+ </div>    
+         <div class="button btn" >
+            <a href="{{url_for('index')}}">FORECAST AVALANCHE</a>
+        </div>  
+</body>
+</html>
