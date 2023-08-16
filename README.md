@@ -15,3 +15,9 @@ http://insideairbnb.com/get-the-data/
 - [Scipy](https://www.scipy.org/)
 - Regression Models
 	+ Linear Regression
+        + Elastic Net
+        + Random Forest Regression
+        + Gradient Boosting Regression
+        + Ridge Regression
+- Ensamble Method
+        + Stacking 
