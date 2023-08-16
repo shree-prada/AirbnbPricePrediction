@@ -6,21 +6,21 @@ model = pickle.load(open('fore.pkl','rb'))
 app = Flask(__name__,static_url_path='/static')
 
 def predict_price(input_data):
-    # #Extract features from input data
-    # features = [input_data['host_listings_count'],
-    #             input_data['host_total_listings_count'],
-    #             input_data['accommodates'],
-    #             input_data['bedrooms'],
-    #             input_data['beds'],
-    #             input_data['review_scores_location'],
-    #             input_data['calculated_host_listings_count'],
-    #             input_data['calculated_host_listings_count_entire_homes'],
-    #             input_data['calculated_host_listings_count_private_rooms']
-    #             ]
-    # #Predict the price using the loaded model
-    # predicted_price = model.predict([features])[0]
-    # return f"${predicted_price:.2f}"
-    return "$200"
+     #Extract features from input data
+     features = [input_data['host_listings_count'],
+                 input_data['host_total_listings_count'],
+                 input_data['accommodates'],
+                 input_data['bedrooms'],
+                 input_data['beds'],
+                 input_data['review_scores_location'],
+                 input_data['calculated_host_listings_count'],
+                 input_data['calculated_host_listings_count_entire_homes'],
+                 input_data['calculated_host_listings_count_private_rooms']
+                 ]
+    #Predict the price using the loaded model
+    predicted_price = model.predict([features])[0]
+    return f"${predicted_price:.2f}"
+    
 
 
 
