@@ -1,7 +1,7 @@
 # AirbnbPricePrediction
 # Airbnb Pricing Predictions
 
-A Statistical Model to predict the optimal Airbnb Listing price in given listing information (e.g. bedrooms, type of bed, location, ratings) and taking into account seasonality data.
+A Statistical Model to predict the optimal Airbnb Listing price in given listing information (e.g. bedrooms, type of bed, location, ratings) and take into account.
 
 ## Data Sources
 http://insideairbnb.com/get-the-data/
@@ -17,12 +17,13 @@ http://insideairbnb.com/get-the-data/
 - Models
 	+ Linear Regression
         + Elastic Net
-        + Gradient Boosting REgression
+        + Gradient Boosting Regression
         + Random Forest Classifier
         + Ridge
 
 ########################################
-In order to run the code make sure you pre-instal all the dependecies such as LIME, Flask etc.
+
+In order to run the code make sure you pre-install all the dependencies such as LIME, Flask etc.
 
 DOWNLOAD THE DATASET:
 
