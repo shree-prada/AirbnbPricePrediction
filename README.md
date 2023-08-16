@@ -20,4 +20,4 @@ http://insideairbnb.com/get-the-data/
         + Gradient Boosting Regression
         + Ridge Regression
 - Ensamble Method
-        + Stacking 
+        - Stacking 
