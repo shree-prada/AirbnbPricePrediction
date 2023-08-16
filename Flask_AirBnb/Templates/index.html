@@ -1,0 +1,120 @@
+'''<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Airbnb Price Prediction</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Century Gothic', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../static/a2.jpg);
+            height: 100vh;
+            background-position: center;
+            overflow: hidden;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            border-radius: 8px;
+            width: 600px;
+            height: 700px;
+            overflow: auto;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .container h1 {
+            margin-bottom: 16px;
+            font-size: 28px;
+            white-space: nowrap; /* Keep the title in a single line */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        input[type="number"],
+        select,
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #000;
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 4px;
+            width: 100%;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #333;
+        }
+
+        .prediction {
+            font-size: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Airbnb Price Prediction</h1>
+        <form action="/predict" method="post">
+            <label for="host_listings_count">Host Listings Count:</label>
+            <input type="number" name="host_listings_count" required>
+
+            <label for="host_total_listings_count">Host Total Listings Count:</label>
+            <input type="number" name="host_total_listings_count" required>
+
+            <label for="accommodates">Accommodates:</label>
+            <input type="number" name="accommodates" required>
+
+            <label for="bedrooms">Bedrooms:</label>
+            <input type="number" name="bedrooms" required>
+
+            <label for="beds">Beds:</label>
+            <input type="number" name="beds" required>
+
+            <label for="review_scores_location">Review Scores Location:</label>
+            <input type="number" name="review_scores_location" required>
+        
+            <label for="calculated_host_listings_count">Calculated Host Listings Count:</label>
+            <input type="number" name="calculated_host_listings_count" required>
+        
+            <label for="calculated_host_listings_count_entire_homes">Calculated Host Listings Count for Entire Homes:</label>
+            <input type="number" name="calculated_host_listings_count_entire_homes" required>
+
+            <label for="calculated_host_listings_count_private_rooms">Calculated Host Listings Count for Private Rooms:</label>
+            <input type="number" name="calculated_host_listings_count_private_rooms" required>
+
+            <input type="submit" value="Predict Price">
+        </form>
+        {% if prediction %}
+        <div class="prediction">
+            <b>Predicted Price:</b> {{ prediction }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
