@@ -1,65 +1,120 @@
+'''<!DOCTYPE html>
 <html>
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-image: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)),url(../static/a6.jpg);
-    height:100vh;
-    background-position:center;
-    overflow:hidden;
-    background-size: cover;
-}
-.title{
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    transform:translate(-50%,-50%);
-}
-.title h1{
-    color:#fff;
-    font-size:50px;
-}
-.line{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform:translate(-50%,-50%);
-}
-.line p{
-    color:#fff;
-    font-size:40px;
-    font-family: fangsong;
-}
-.button{
-    position: absolute;
-    top: 62%;
-    left: 50%;
-    transform:translate(-50%,-50%);
-    background-color:lavenderblush;
-}
-.btn{
-    border:1px solid #fff;
-    padding: 10px 30px;
-    color:#fff;
-    text-decoration: none;
-    transition:0.6s ease;
-}
-.btn:hover{
-    background-color:lightseagreen;
-    color:#000; 
-}
-</style>
+    <title>Airbnb Price Prediction</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Century Gothic', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../static/a2.jpg);
+            height: 100vh;
+            background-position: center;
+            overflow: hidden;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            border-radius: 8px;
+            width: 600px;
+            height: 700px;
+            overflow: auto;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .container h1 {
+            margin-bottom: 16px;
+            font-size: 28px;
+            white-space: nowrap; /* Keep the title in a single line */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        input[type="number"],
+        select,
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #000;
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 4px;
+            width: 100%;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #333;
+        }
+
+        .prediction {
+            font-size: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
 </head>
+
 <body>
-<div class="title">
-            <h1>AVALANCHE FORECASTING</h1>
+    <div class="container">
+        <h1>Airbnb Price Prediction</h1>
+        <form action="/predict" method="post">
+            <label for="host_listings_count">Host Listings Count:</label>
+            <input type="number" name="host_listings_count" required>
+
+            <label for="host_total_listings_count">Host Total Listings Count:</label>
+            <input type="number" name="host_total_listings_count" required>
+
+            <label for="accommodates">Accommodates:</label>
+            <input type="number" name="accommodates" required>
+
+            <label for="bedrooms">Bedrooms:</label>
+            <input type="number" name="bedrooms" required>
+
+            <label for="beds">Beds:</label>
+            <input type="number" name="beds" required>
+
+            <label for="review_scores_location">Review Scores Location:</label>
+            <input type="number" name="review_scores_location" required>
+        
+            <label for="calculated_host_listings_count">Calculated Host Listings Count:</label>
+            <input type="number" name="calculated_host_listings_count" required>
+        
+            <label for="calculated_host_listings_count_entire_homes">Calculated Host Listings Count for Entire Homes:</label>
+            <input type="number" name="calculated_host_listings_count_entire_homes" required>
+
+            <label for="calculated_host_listings_count_private_rooms">Calculated Host Listings Count for Private Rooms:</label>
+            <input type="number" name="calculated_host_listings_count_private_rooms" required>
+
+            <input type="submit" value="Predict Price">
+        </form>
+        {% if prediction %}
+        <div class="prediction">
+            <b>Predicted Price:</b> {{ prediction }}
         </div>
- <div class="line">
- <p><em>The Avalanche Prediction to Save Lives</em><p>
- </div>    
-         <div class="button btn" >
-            <a href="{{url_for('index')}}">FORECAST AVALANCHE</a>
-        </div>  
+        {% endif %}
+    </div>
 </body>
 </html>
